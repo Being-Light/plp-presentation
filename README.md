@@ -5,11 +5,17 @@ The main feature of the website is its click-tracking mechanism for the social m
 
 Features:
 
+
 Homepage: Displays a list of food items with pictures.
+
 About Us: A page providing information about the chef and the business.
+
 Contact Us: A page for users to reach out.
+
 Social Media Pages: Directs users to Instagram, Facebook, and YouTube pages.
+
 Admin Panel: A backend page for tracking how many times each social media link has been clicked.
+
 Real-Time Click Tracking: The backend counts the clicks for Instagram, Facebook, and YouTube and displays them in the admin panel.
 
 
@@ -48,7 +54,7 @@ Run the following command to install all required dependencies:
 Run the Server:
     After installing the dependencies, run the following command to start the backend server:
         
-        npm start
+    npm start
 The application should now be accessible at http://localhost:3000.
 
 
