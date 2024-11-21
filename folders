@@ -1,0 +1,19 @@
+/project-folder
+  /assets
+    /images
+      - food1.jpg (upload your food images here)
+      - food2.jpg (upload your food images here)
+      - logo.png (upload your logo here)
+  /css
+    - styles.css
+  /js
+    - script.js
+  /admin
+    - admin.html (Admin panel for managing content and viewing clicks)
+  index.html
+  about.html
+  contact.html
+  instagram.html
+  facebook.html
+  youtube.html
+  app.js (Backend with Express)
