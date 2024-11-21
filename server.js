@@ -1,44 +1,37 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+const app = express();
 
-// Store counts for each platform (reset to zero on server restart)
+// Store click counts for social media platforms (in-memory storage for simplicity)
 let clickCounts = {
     instagram: 0,
     facebook: 0,
     youtube: 0
 };
 
-// Serve static files (e.g., HTML, CSS)
+// Serve static files (HTML, CSS, images, etc.) from the public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Endpoint to handle tracking of clicks
+// Route to track clicks
 app.get('/track-click', (req, res) => {
-    const platform = req.query.social;
+    const platform = req.query.social;  // 'social' parameter will tell us which platform was clicked
     
-    if (platform && clickCounts[platform] !== undefined) {
+    // Increase the click count for the specified platform
+    if (clickCounts.hasOwnProperty(platform)) {
         clickCounts[platform]++;
-        console.log(`Click recorded for ${platform}. Current count: ${clickCounts[platform]}`);
     }
 
-    res.status(200).send('Click recorded');
+    res.send('Click tracked for ' + platform);
 });
 
-// Admin panel to view click counts
-app.get('/admin', (req, res) => {
-    res.send(`
-        <h1>Admin Panel</h1>
-        <p>Instagram clicks: ${clickCounts.instagram}</p>
-        <p>Facebook clicks: ${clickCounts.facebook}</p>
-        <p>YouTube clicks: ${clickCounts.youtube}</p>
-        <a href="/admin/reset">Reset Counts</a>
-    `);
+// Route to fetch the current click counts
+app.get('/get-clicks', (req, res) => {
+    res.json(clickCounts);  // Send the click counts in JSON format to the frontend
 });
 
-// Admin reset endpoint to reset the click counts
-app.get('/admin/reset', (req, res) => {
-    clickCounts = { instagram: 0, facebook: 0, youtube: 0 };
-    res.send('<h1>Click counts have been reset!</h1><a href="/admin">Go back to admin panel</a>');
+// Default route to handle any other requests (just in case for 404 handling)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', req.url));
 });
 
 // Start the server
