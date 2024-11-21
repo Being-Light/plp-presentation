@@ -5,7 +5,6 @@ The main feature of the website is its click-tracking mechanism for the social m
 
 Features:
 
-
 Homepage: Displays a list of food items with pictures.
 
 About Us: A page providing information about the chef and the business.
@@ -25,7 +24,7 @@ To run this website locally, you need to have the following software installed:
 Prerequisites
     Node.js: You need Node.js installed to run the backend server.
         
-        Install Node.js: https://nodejs.org/
+    Install Node.js: https://nodejs.org/
 npm (Node Package Manager): npm is included with Node.js and will be used to install dependencies.
 
 
