@@ -3,64 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Chef's Menu</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Admin Panel - Track Clicks</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
 </head>
 <body>
     <header>
-        <img src="../assets/images/logo.png" alt="Chef's Logo" class="logo">
+        <img src="../public/assets/images/logo.png" alt="Chef's Logo" class="logo">
         <nav>
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About Us</a></li>
-                <li><a href="../contact.html">Contact Us</a></li>
+                <li><a href="../public/index.html">Home</a></li>
+                <li><a href="../public/about.html">About Us</a></li>
+                <li><a href="../public/contact.html">Contact Us</a></li>
+                <li><a href="admin.html">Admin Panel</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="admin">
-        <h2>Admin Dashboard</h2>
-        <p>Welcome to the admin panel. Here you can view click tracking statistics and manage menu items.</p>
+    <section id="admin-panel">
+        <h1>Admin Panel - Click Tracking</h1>
 
-        <div class="stats">
-            <h3>Social Media Clicks:</h3>
-            <p>Instagram Clicks: <span id="instagram-clicks">0</span></p>
-            <p>Facebook Clicks: <span id="facebook-clicks">0</span></p>
-            <p>YouTube Clicks: <span id="youtube-clicks">0</span></p>
+        <div id="social-clicks">
+            <h2>Click Counts</h2>
+            <ul>
+                <li><strong>Instagram:</strong> <span id="instagram-count">Loading...</span> clicks</li>
+                <li><strong>Facebook:</strong> <span id="facebook-count">Loading...</span> clicks</li>
+                <li><strong>YouTube:</strong> <span id="youtube-count">Loading...</span> clicks</li>
+            </ul>
         </div>
 
-        <div class="food-management">
-            <h3>Manage Food Menu:</h3>
-            <p>Here you can manage the food items (for simplicity, it's a static view in this example).</p>
-            <div id="menu-items">
-                <div class="menu-item">
-                    <img src="../assets/images/food1.jpg" alt="Food 1"> <!-- Upload your food image here -->
-                    <h3>Food 1</h3>
-                </div>
-                <!-- Repeat for other food items -->
-            </div>
-        </div>
+        <script>
+            // Fetch the click counts from the server and display them
+            function fetchClickCounts() {
+                fetch('/get-clicks')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Update the click counts on the page
+                        document.getElementById('instagram-count').innerText = data.instagram || 0;
+                        document.getElementById('facebook-count').innerText = data.facebook || 0;
+                        document.getElementById('youtube-count').innerText = data.youtube || 0;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching click counts:', error);
+                    });
+            }
+
+            // Load the click counts when the page is loaded
+            window.onload = function() {
+                fetchClickCounts();
+            };
+        </script>
     </section>
 
     <footer>
         <ul>
-            <li><a href="../instagram.html">Instagram</a></li>
-            <li><a href="../facebook.html">Facebook</a></li>
-            <li><a href="../youtube.html">YouTube</a></li>
+            <li><a href="../public/instagram.html">Instagram</a></li>
+            <li><a href="../public/facebook.html">Facebook</a></li>
+            <li><a href="../public/youtube.html">YouTube</a></li>
         </ul>
     </footer>
-
-    <script src="../js/script.js"></script>
-    <script>
-        // Fetch tracking data for clicks from the backend
-        fetch('/clicks')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('instagram-clicks').textContent = data.instagram;
-                document.getElementById('facebook-clicks').textContent = data.facebook;
-                document.getElementById('youtube-clicks').textContent = data.youtube;
-            })
-            .catch(error => console.error('Error fetching click data:', error));
-    </script>
 </body>
 </html>
