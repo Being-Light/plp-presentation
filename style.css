@@ -76,6 +76,13 @@ section#menu h2 {
     margin-top: 10px;
 }
 
+.company-name {
+    font-size: 36px; /* Adjust size as needed */
+    color: #6a1b9a; /* Purple color for the company name */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 /* Footer styling */
 footer {
     background-color: #6a1b9a; /* Purple background */
