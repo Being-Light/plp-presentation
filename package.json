@@ -1,0 +1,22 @@
+{
+  "name": "chef-food-menu",
+  "version": "1.0.0",
+  "description": "A website for a chef to showcase a menu and track social media clicks",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "chef",
+    "menu",
+    "food",
+    "website",
+    "social media",
+    "tracking"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
