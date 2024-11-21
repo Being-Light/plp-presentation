@@ -1,0 +1,176 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;  /* Light background color */
+    color: #333;  /* Default text color */
+}
+
+/* Header styling */
+header {
+    background-color: #6a1b9a; /* Purple background */
+    color: white; /* Text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .logo {
+    width: 150px; /* Logo size */
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Menu Section */
+section#menu {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ffeb3b; /* Yellow background for the menu section */
+}
+
+section#menu h2 {
+    color: #6a1b9a; /* Purple color for section heading */
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+.menu-item h3 {
+    font-size: 18px;
+    color: #6a1b9a; /* Purple text for food names */
+    margin-top: 10px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #6a1b9a; /* Purple background */
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Admin Panel Styles */
+#admin {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f4f4; /* Light background */
+}
+
+#admin h2 {
+    color: #6a1b9a; /* Purple heading */
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.stats {
+    margin-bottom: 40px;
+}
+
+.stats p {
+    font-size: 20px;
+    color: #6a1b9a; /* Purple for text */
+}
+
+/* Food Management Section */
+.food-management {
+    margin-top: 40px;
+}
+
+.food-management h3 {
+    color: #6a1b9a; /* Purple for sub-heading */
+    font-size: 24px;
+}
+
+#menu-items .menu-item {
+    display: inline-block;
+    margin: 10px;
+    background-color: #ffeb3b; /* Yellow background for food items */
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#menu-items .menu-item img {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+#menu-items .menu-item h3 {
+    color: #6a1b9a; /* Purple for food names */
+}
+
+/* Contact Form */
+form input,
+form textarea {
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #6a1b9a; /* Purple button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #4a148c; /* Darker purple on hover */
+}
