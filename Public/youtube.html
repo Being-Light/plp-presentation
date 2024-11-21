@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube - Chef's Special Menu</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <img src="assets/images/logo.png" alt="Chef's Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="admin/admin.html">Admin Panel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="social-media">
+        <h2>Follow us on YouTube!</h2>
+        <p>Redirecting you to our official YouTube page...</p>
+        <p>If you are not automatically redirected, click the link below:</p>
+        <a href="https://www.youtube.com/c/chef" id="youtube-link" target="_blank">Go to YouTube</a>
+
+        <script>
+            // Track click event for YouTube
+            document.getElementById("youtube-link").addEventListener("click", function(event) {
+                fetch('/track-click?social=youtube')
+                    .then(response => console.log('YouTube Click Tracked'))
+                    .catch(error => console.error('Tracking failed', error));
+            });
+
+            // Automatically redirect after a short delay to the homepage
+            setTimeout(function() {
+                window.location.href = "index.html"; // Redirect to homepage after 3 seconds
+            }, 3000); // 3 seconds delay before redirect
+        </script>
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="instagram.html">Instagram</a></li>
+            <li><a href="facebook.html">Facebook</a></li>
+            <li><a href="youtube.html">YouTube</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
